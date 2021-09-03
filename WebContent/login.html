@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Projeto Rascunho - Página inicial</title>
+	<link rel="shortcut icon" href="/sgh/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap_4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap_4/modelo.css">
+	<link rel="stylesheet" type="text/css" href="resources/fontawesome/css/all.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/loader.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/login.css">
+</head>
+<body>
+<div id="containerLogin" class="" v-cloak>
+		<!-- Início Loader -->
+		<div class="loader" id="loader-primario">
+			<span></span> <span></span> <span></span> <span></span>
+		</div>
+		<!-- Fim Loader -->
+		<div class="loaderFocus" id="loader-primario-focus"></div>
+		<!-- Início Form login -->
+
+	<div id="login">
+		<div class="principal">
+
+			<div class="windowlogin">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 spacelogo text-center">
+								<img src="resources/images/logo.png" class="img-fluid p-2 " alt="">
+								<h3>Projeto de Rascunho</h3>
+						</div>
+						<div class="col-md-6 areautil">
+							<div class="container text-center">
+								<form class="form-signin" v-on:submit.prevent="login">
+									<input type="text" class="form-control campform"id="inputlogin"
+									aria-describedby="Login de acesso" v-model="dto.login" name="login" placeholder="Seu login">
+									
+									<div style="position: relative;">
+
+									<input type="password" class="form-control campform" id="inputsenha" v-model="dto.senha"
+									aria-describedby="Senha de acesso" placeholder="Senha">	
+										<div class="olhosenha" id="mostraSenha"><i id="olho" class="far fa-eye"></i></div>
+									</div>
+									<button v-on:keyup.enter="login"
+											v-on:click="login" id="btn-login"
+											class="btn btn-success form-control">
+										Fazer Login
+									</button>
+								</form>	
+
+
+								<div v-cloak v-if="msgErro.length > 0">
+									<div id="divMsgErro" class="divMsgErro">{{ msgErro }}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fim Form login -->
+
+	</div>
+</div>
+	<div id="footer">
+		<footer-hepta></footer-hepta>
+	</div>
+
+	<script src="resources/js/axios.min.js"></script>
+	<script src="resources/js/vue.js"></script>
+	<script src="resources/js/utils.js"></script>
+	<script src="resources/js/loader.js"></script>
+	<script src="resources/js/jquery-3.3.1.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap-vue.min.js"></script>
+	<script src="resources/js/httpVueLoader.js"></script>
+	<script src="resources/js/login.js"></script>
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="resources/js/ie10-viewport-bug-workaround.js"></script>
+	<script>
+		document.getElementById('mostraSenha').addEventListener('mousedown', function() {
+			console.log('muda');
+			document.getElementById('inputsenha').type = 'text';
+		});
+		document.getElementById("mostraSenha").addEventListener("click", function(){
+			console.log('muda');
+		});
+		document.getElementById('mostraSenha').addEventListener('mouseup', function() {
+			document.getElementById('inputsenha').type = 'password';
+		});
+
+		// Para que o password não fique exposto apos mover a imagem.
+		document.getElementById('mostraSenha').addEventListener('mousemove', function() {
+			document.getElementById('inputsenha').type = 'password';
+		});
+	</script>
+
+</body>
+
+</html>
