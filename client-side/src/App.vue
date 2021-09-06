@@ -11,14 +11,14 @@ import auth from "@/utils/auth";
 export default {
   data() {
     return {
-      auth: auth
+      auth: auth,
     };
   },
   components: {},
   computed: {
-    isLogged() {
-      return $auth.isLogged;
-    }
+    // isLogged() {
+    //   return $auth.isLogged;
+    // },
   },
   created() {},
 };

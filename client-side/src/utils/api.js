@@ -4,15 +4,15 @@ import { refreshToken, extractExpirationTimeToken } from "./tokenUtil";
 
 let baseURL = process.env.VUE_APP_URL_BASE;
 
-export default function() {
+export default function () {
   const config = axios.create({
     baseURL,
-    withCredentials: true
+    withCredentials: true,
   });
-  
+
   const api = axios.create(config);
   api.interceptors.response.use(
-    config => {
+    (config) => {
       let user = null;
       try {
         user = JSON.parse(localStorage.getItem("user"));
@@ -27,7 +27,7 @@ export default function() {
       }
       return config;
     },
-    err => {
+    (err) => {
       throw err;
     }
   );
