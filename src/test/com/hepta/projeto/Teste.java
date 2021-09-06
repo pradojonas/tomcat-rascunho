@@ -2,7 +2,7 @@ package com.hepta.projeto;
 
 import org.junit.jupiter.api.Test;
 
-import main.Application;
+import com.projeto.Application;
 
 public class Teste {
     

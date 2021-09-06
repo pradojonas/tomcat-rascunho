@@ -1,0 +1,36 @@
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --port 8081",
+    "build": "vue-cli-service build",
+    "homol": "vue-cli-service build --mode homol",
+    "lint": "vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "axios": "^0.21.3",
+    "core-js": "^3.17.2",
+    "npm-check-updates": "^11.8.5",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-plugin-router": "~4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "@vue/compiler-sfc": "^3.2.9",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^7.17.0",
+    "prettier": "^2.3.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
