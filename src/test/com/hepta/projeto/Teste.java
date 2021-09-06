@@ -1,4 +1,4 @@
-package test.com.hepta.projeto;
+package com.hepta.projeto;
 
 import org.junit.jupiter.api.Test;
 
