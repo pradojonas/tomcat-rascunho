@@ -23,10 +23,19 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<hibernate.version>5.4.13.Final</hibernate.version>
 		<hibernate.validator.version>6.1.5.Final</hibernate.validator.version>
-		<jersey.version>2.29.1</jersey.version>
+		<jersey.version>2.31</jersey.version>
+		<hk2.version>2.6.1</hk2.version>
 	</properties>
 
 	<dependencies>
+
+		<!-- Servlet provided by Tomcat -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- JUNIT (Jupiter) -->
 		<dependency>
@@ -65,46 +74,52 @@
 		</dependency>
 
 		<!-- Jersey -->
-		<dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-servlet</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.ext</groupId>
-			<artifactId>jersey-bean-validation</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.ext.cdi</groupId>
-			<artifactId>jersey-cdi1x-servlet</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-multipart</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.inject</groupId>
-			<artifactId>jersey-hk2</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
+<dependency>
+  <groupId>org.glassfish.jersey.containers</groupId>
+  <artifactId>jersey-container-servlet</artifactId>
+  <version>${jersey.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.core</groupId>
+    <artifactId>jersey-client</artifactId>
+    <version>${jersey.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse</groupId>
+    <artifactId>yasson</artifactId>
+    <version>1.0.7</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.inject</groupId>
+    <artifactId>jersey-hk2</artifactId>
+    <version>${jersey.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.hk2</groupId>
+    <artifactId>hk2-api</artifactId>
+    <version>${hk2.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.hk2</groupId>
+    <artifactId>hk2-locator</artifactId>
+    <version>${hk2.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.hk2</groupId>
+    <artifactId>hk2-utils</artifactId>
+    <version>${hk2.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-sse</artifactId>
+    <version>${jersey.version}</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jersey.media</groupId>
+    <artifactId>jersey-media-json-binding</artifactId>
+    <version>${jersey.version}</version>
+</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.jboss.resteasy/resteasy-jaxrs -->
 		<dependency>
