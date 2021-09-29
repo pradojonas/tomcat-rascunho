@@ -95,10 +95,28 @@
 </template>
 
 <script>
+import RascunhoService from '../services/RascunhoService';
+
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  setup() {
+    const { getRascunho } = RascunhoService();
+    return { getRascunho };
+  },
+  async mounted() {
+    const vm = this;
+    await this.buscarRascunho();
+  },
+  methods: {
+    async buscarRascunho() {
+      console.log('Iniciando GET de Rascunho');
+      this.getRascunho('TESTE DE FRONT').then((res) => {
+        console.log(`Resultado:${res.data}`);
+      });
+    },
   },
 };
 </script>

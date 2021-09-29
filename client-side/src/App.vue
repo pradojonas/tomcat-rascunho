@@ -7,19 +7,12 @@
 </template>
 
 <script>
-import auth from "@/utils/auth";
 export default {
   data() {
-    return {
-      auth: auth,
-    };
+    return {};
   },
   components: {},
-  computed: {
-    // isLogged() {
-    //   return $auth.isLogged;
-    // },
-  },
+  computed: {},
   created() {},
 };
 </script>

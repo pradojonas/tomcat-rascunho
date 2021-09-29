@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
-// import api from "@/utils/api";
-// import auth from "@/utils/auth";
 
 const routes = [
   {
@@ -25,25 +23,6 @@ const router = createRouter({
 /* Interceptor de autenticacao */
 router.beforeEach((to, _, next) => {
   return next();
-  // return logout(to, next, true);
 });
-
-// const logout = async (to, next, redirect = false) => {
-//   try {
-//     await api.delete("/logout");
-//     auth.logout();
-//   } finally {
-//     if (redirect) {
-//       next({
-//         path: "/login",
-//         query: { redirect: to.fullPath, error: "token" },
-//       });
-//     } else {
-//       next({
-//         path: "/login",
-//       });
-//     }
-//   }
-// };
 
 export default router;
